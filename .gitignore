@@ -1,0 +1,4 @@
+node_modules/
+slide-*.png
+slide-preview.html
+.DS_Store

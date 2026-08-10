@@ -1,0 +1,12 @@
+{
+  "name": "kyle-cardnews",
+  "version": "1.0.0",
+  "description": "설교 핵심 메시지를 SNS 카드뉴스(10장·1080×1350)로 변환하는 Claude 스킬",
+  "license": "MIT",
+  "scripts": {
+    "capture": "node scripts/capture-cardnews.js"
+  },
+  "dependencies": {
+    "puppeteer": "^24.0.0"
+  }
+}
