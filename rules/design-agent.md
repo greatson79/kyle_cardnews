@@ -16,7 +16,7 @@ sns-cardnews_SKILL.md 생성 절차 Step 0 → Design Agent 실행
 
 수동 실행:
 ```bash
-# Team Leader 또는 사용자가 직접 호출
+# 사용자(또는 상위 에이전트)가 직접 호출
 /wave "카드뉴스 디자인 브리프 생성: {설교제목}"
 ```
 
@@ -34,10 +34,10 @@ sns-cardnews_SKILL.md 생성 절차 Step 0 → Design Agent 실행
 
 | 입력 | 경로 | 필수 |
 |------|------|------|
-| sermon-context.md | `output/{월}/{주차}/설교/sermon-context.md` | 필수 |
-| 브랜드 가이드 | `src/assets/colors/brand-guide.md` | 필수 |
+| sermon-context.md | sermon-context.md (SKILL.md 입력 스키마 참조) | 필수 |
+| 브랜드 가이드 | `config/brand-guide.md` | 필수 |
 | 절기 정보 | sermon-context.md 내 date/season 필드 | 선택 |
-| 이전 디자인 참조 | `src/assets/templete src/` | 선택 |
+| 이전 디자인 참조 | (선택) 자체 레퍼런스 폴더 | 선택 |
 
 ---
 
@@ -45,7 +45,7 @@ sns-cardnews_SKILL.md 생성 절차 Step 0 → Design Agent 실행
 
 | 산출물 | 경로 | 설명 |
 |--------|------|------|
-| `design-brief.md` | `output/{월}/{주차}/카드뉴스/design-brief.md` | 슬라이드별 디자인 지시서 |
+| `design-brief.md` | 출력 폴더의 `design-brief.md` | 슬라이드별 디자인 지시서 |
 
 ---
 
@@ -189,7 +189,7 @@ Design Agent가 `design-brief.md`를 완성하면,
 
 ### 협업 체인
 ```
-Team Leader
+사용자(또는 상위 에이전트)
   └─ WK-G: Design Agent (auto, 선행)
        ├─ design-template-scout 소환 (검색)
        ├─ WebSearch 실행
